@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Made just for you, Borno</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--night:#1b1530;--plum:#2e2150;--rose:#ff8fa3;--gold:#ffe29a;--mist:#efe9ff;--em:#0b6b52;--em2:#14a079;--paper:#fbf6ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,var(--plum),var(--night) 70%);color:var(--mist);font-family:Nunito,system-ui,sans-serif;text-align:center;padding:2.5rem 1.25rem 4rem}
+section{max-width:34rem;margin:0 auto 3.5rem}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .6rem}
+h1{font-size:clamp(2rem,8vw,3.3rem)}h2{font-size:1.7rem}
+.sub{line-height:1.6;opacity:.85;margin:0 0 1.2rem}
+.days{display:inline-block;margin:.3rem 0 2.5rem;padding:.6rem 1.2rem;border-radius:999px;background:rgba(255,226,154,.12);color:var(--gold)}
+.sky{position:relative;height:17rem;border-radius:1.5rem;background:rgba(255,255,255,.04);margin-bottom:1rem}
+.star{position:absolute;width:3.2rem;height:3.2rem;margin:-1.6rem 0 0 -1.6rem;border:0;background:none;font-size:2rem;color:var(--gold);cursor:pointer;filter:drop-shadow(0 0 8px var(--gold));animation:tw 2.4s ease-in-out infinite}
+.star:nth-child(2n){animation-delay:.7s}.star:nth-child(3n){animation-delay:1.3s}
+.star.done{color:var(--rose);filter:drop-shadow(0 0 10px var(--rose));animation:none;transform:scale(1.15)}
+@keyframes tw{50%{opacity:.45;transform:scale(.85)}}
+button:focus-visible{outline:3px solid var(--mist);outline-offset:3px}
+.cert{min-height:8.5rem;padding:1.2rem 1.4rem;border-radius:.6rem;background:var(--paper);color:var(--night);border:3px double #b9923c;font-family:Fraunces,Georgia,serif;font-size:1.2rem;line-height:1.45;display:flex;flex-direction:column;justify-content:center;gap:.4rem}
+.cert small{font:600 .8rem Nunito,sans-serif;color:#8a6a1f}
+.count{font-size:.9rem;opacity:.7;margin-bottom:.8rem}
+.note{background:var(--mist);color:var(--night);border-radius:1rem;padding:1.2rem 1.4rem;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.15rem;line-height:1.55;text-align:left}
+.row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1rem}
+.btn{border:0;border-radius:999px;background:var(--rose);color:var(--night);font:600 1rem Nunito,sans-serif;padding:.8rem 1.4rem;cursor:pointer}
+.btn.alt{background:rgba(255,255,255,.12);color:var(--mist)}.btn.alt.on{background:var(--gold);color:var(--night)}
+.coupon{display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;border:2px dashed var(--gold);border-radius:1rem;padding:1rem 1.2rem;margin-bottom:.8rem}
+.coupon.used{opacity:.45;text-decoration:line-through}
+input{width:100%;max-width:20rem;border-radius:999px;border:0;padding:.8rem 1.1rem;font:1rem Nunito,sans-serif}
+ul{list-style:none;padding:0;margin:1rem 0 0}
+li{display:flex;justify-content:space-between;align-items:center;gap:.8rem;background:rgba(255,255,255,.07);border-radius:.8rem;padding:.7rem 1rem;margin-bottom:.5rem;text-align:left}
+.env{position:relative;width:min(20rem,100%);height:12.5rem;margin:1rem auto 0;cursor:pointer;border:0;background:none;padding:0}
+.env .body{position:absolute;inset:0;border-radius:.6rem;background:linear-gradient(160deg,var(--em2),var(--em));box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.env .flap{position:absolute;left:0;right:0;top:0;height:6.5rem;background:#0a5b45;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s;border-radius:.6rem .6rem 0 0}
+.env .seal{position:absolute;left:50%;top:5rem;transform:translate(-50%,0);font-size:2.2rem;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg)}.env.open .seal{opacity:0}
+.letter{display:none;max-width:30rem;margin:1.5rem auto 0;background:var(--paper);color:#26201a;border-radius:.6rem;padding:1.6rem 1.5rem;text-align:left;font-family:Fraunces,Georgia,serif;font-size:1.15rem;line-height:1.65;white-space:pre-line;border-top:6px solid var(--em)}
+.letter.show{display:block}
+.heart{position:fixed;bottom:-2rem;font-size:1.6rem;pointer-events:none;animation:up 3.2s ease-out forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.star{animation:none}.env .flap{transition:none}.heart{animation-duration:.01s}}
+</style></head>
+<body>
+<section>
+<h1 id="title"></h1>
+<p class="sub">Happy Boyfriend's Day to the most hardworking man I know 💚<br>I made you a little night sky. Tap every star. Some of it is serious, most of it is fries.</p>
+<div class="days" id="days"></div>
+<div class="sky" id="sky"></div>
+<div class="count" id="count"></div>
+<div class="cert" id="cert"></div>
+</section>
+
+<section>
+<h2>A night I keep</h2>
+<div class="note" id="night"></div>
+</section>
+
+<section>
+<h2>Open when...</h2>
+<div class="row" id="when"></div>
+<div class="note" id="whenNote" style="display:none"></div>
+</section>
+
+<section>
+<h2>Coupons</h2>
+<p class="sub">Tap to redeem. Screenshot it and send it to me.</p>
+<div id="coupons"></div>
+</section>
+
+<section>
+<h2>Our song list</h2>
+<p class="sub">We don't have our song yet. Add one you think fits us, then send it to me.</p>
+<div class="row"><input id="song" placeholder="Song and artist" aria-label="Song and artist"><button class="btn" id="add">Add</button></div>
+<ul id="songs"></ul>
+</section>
+
+<section>
+<h2>One last thing</h2>
+<p class="sub">Open the green one.</p>
+<button class="env" id="env" aria-label="Open the envelope"><div class="body"></div><div class="flap"></div><div class="seal">💚</div></button>
+<div class="letter" id="letter"></div>
+</section>
+
+<script>
+/* ===== EDIT THESE ===== */
+var HIS_NAME="Borno", START=new Date(2022,2,23);
+var CERTS=[
+ "Legally required to share fries.\nOffender: Borno Das.",
+ "We are fat because we are in a healthy relationship. Medically unverified, emotionally accurate.",
+ "Snack tax: one bite of everything, payable to Daisy.",
+ "Official food cutter. Cuts my food for me every single time, then has the nerve to call me fat.",
+ "Daisy would like to file a complaint: you ate the last fry. Yes, Daisy is back. Deal with it.",
+ "Final ruling: still the one I'd share my fries with."
+];
+var NIGHT="We weren't together then, but we still loved each other, and that night proved it. You took me out clubbing, and afterwards a guy we had just randomly met was playing the guitar, with a bunch of other people around. We hugged, and we danced to just one song while the whole world disappeared. Then someone else drove the bike home. I sat squeezed in the middle and you sat behind me, holding me tight so I wouldn't fall. We were both very, very drunk, and I have never felt safer. I think about that night all the time.";
+var WHEN=[
+ ["Miss me","Close your eyes and think of the bike ride home. I'm far, not gone. Call me. I'm probably thinking about fries anyway."],
+ ["Stressed","Breathe. You work harder than anyone I know and you've handled worse than this. Drink water, take five minutes, then go again. I'm proud of you."],
+ ["Hungry","Go eat. A proper meal. Send me a photo so I can be jealous. Fries count as a meal. Legally."]
+];
+var COUPONS=["Free roast #1: I'll take it without complaining","Free roast #2: same deal, use it wisely"];
+var SONGS=[];
+var LETTER="Borno,\n\nI'm not great at saying this out loud, so I'm writing it down.\n\nI'm proud of you. Really proud. I watch how hard you work, even when you're tired, even when nobody is clapping, and it makes me want to be better too.\n\nI can't wait to see who you become in a few years. I already know he's something special. You deserve every good thing that's coming, and I hope I get to watch it happen.\n\nThe distance is annoying, but it doesn't change any of this.\n\nAlso, you still owe me fries.\n\nLove,\nYour Daisy";
+/* ====================== */
+var $=function(i){return document.getElementById(i)};
+$("title").textContent="Hey "+HIS_NAME+", this is for you";
+$("days").textContent="It's been "+Math.floor((Date.now()-START)/864e5).toLocaleString()+" days since March 23, 2022";
+$("night").textContent=NIGHT;
+var POS=[[18,30],[42,16],[70,28],[28,65],[56,58],[82,68]],found=0;
+$("cert").innerHTML="<small>Tap a star to receive your first certificate</small>";
+function cnt(){$("count").textContent=found+" of "+CERTS.length+" certificates collected"}cnt();
+CERTS.forEach(function(c,i){var b=document.createElement("button");b.className="star";b.textContent="★";b.setAttribute("aria-label","Star "+(i+1));
+ b.style.left=POS[i][0]+"%";b.style.top=POS[i][1]+"%";
+ b.onclick=function(){$("cert").innerHTML="";var s=document.createElement("small");s.textContent="Official Bully Certificate no. "+(i+1);var p=document.createElement("div");p.style.whiteSpace="pre-line";p.textContent=c;$("cert").append(s,p);
+  if(!b.classList.contains("done")){b.classList.add("done");found++;cnt()}};$("sky").appendChild(b)});
+WHEN.forEach(function(w,i){var b=document.createElement("button");b.className="btn alt";b.textContent=["Open when you miss me","Open when you're stressed","Open when you're hungry"][i];
+ b.onclick=function(){document.querySelectorAll("#when .btn").forEach(function(x){x.classList.remove("on")});b.classList.add("on");$("whenNote").style.display="block";$("whenNote").textContent=w[1]};$("when").appendChild(b)});
+COUPONS.forEach(function(c){var d=document.createElement("div");d.className="coupon";var t=document.createElement("span");t.textContent=c;var b=document.createElement("button");b.className="btn";b.textContent="Redeem";
+ b.onclick=function(){d.classList.add("used");b.disabled=true;b.textContent="Redeemed"};d.append(t,b);$("coupons").appendChild(d)});
+var saved=[];try{saved=JSON.parse(localStorage.getItem("ourSongs")||"[]")}catch(e){}
+var list=SONGS.concat(saved);
+function send(s){var t="A song for our list: "+s;if(navigator.share){navigator.share({text:t}).catch(function(){})}else{window.open("https://wa.me/?text="+encodeURIComponent(t))}}
+function draw(){$("songs").innerHTML="";list.forEach(function(s){var li=document.createElement("li");var t=document.createElement("span");t.textContent="🎵 "+s;var b=document.createElement("button");b.className="btn alt";b.textContent="Send to Debora";b.onclick=function(){send(s)};li.append(t,b);$("songs").appendChild(li)})}
+draw();
+$("add").onclick=function(){var v=$("song").value.trim();if(!v)return;list.push(v);saved.push(v);try{localStorage.setItem("ourSongs",JSON.stringify(saved))}catch(e){}$("song").value="";draw()};
+$("env").onclick=function(){this.classList.add("open");$("letter").textContent=LETTER;$("letter").classList.add("show");
+ for(var i=0;i<28;i++){(function(i){setTimeout(function(){var h=document.createElement("div");h.className="heart";h.textContent=["💚","💖","✨","🍟"][i%4];h.style.left=Math.random()*95+"vw";document.body.appendChild(h);setTimeout(function(){h.remove()},3300)},i*100)})(i)}};
+</script></body></html>
