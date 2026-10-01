@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Borno</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--moss:#4f6b4c;--gold:#e6c776;--goldd:#b9923c;--rose:#b96a72;--rosed:#9a4d58;--blush:#efc6c4;--paper:#fbf4e4;--ink:#2f2a24;--deep:#2d5a43;--deep2:#234a38;
+--serif:'Cormorant Garamond',Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background-color:var(--moss);background-image:radial-gradient(ellipse at 15% 8%,rgba(160,195,140,.4),transparent 55%),radial-gradient(ellipse at 85% 38%,rgba(25,55,38,.4),transparent 50%),radial-gradient(ellipse at 25% 88%,rgba(150,185,130,.3),transparent 55%);background-attachment:fixed;color:var(--paper);font:500 1.2rem/1.55 var(--serif);text-align:center;padding:3rem 1.2rem 5rem}
+button,input{font-family:var(--serif)}
+section{max-width:34rem;margin:0 auto 4.5rem}
+h1{font:italic 700 clamp(2.6rem,11vw,3.6rem)/1 var(--serif);margin:1rem 0 .8rem;color:var(--gold)}
+h2{font:italic 700 1.9rem/1.1 var(--serif);color:var(--gold);margin:0 0 1.6rem}
+h2::after{content:"";display:block;width:6rem;height:1px;margin:.7rem auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sub{margin:0 auto 1rem;max-width:24rem;font-size:1.3rem}
+.fine{font-size:1.05rem;font-style:italic;opacity:.9;margin:0 0 1rem}
+.lotus svg{width:17rem;max-width:90%;height:auto;display:block;margin:0 auto}
+.days{margin:1.6rem 0 0}.days b{display:block;font:italic 700 2.5rem/1 var(--serif);color:var(--gold)}.days span{font-size:1.05rem;font-style:italic;opacity:.9}
+.sky{position:relative;height:18rem;margin-bottom:1rem;border-radius:1rem;border:1px solid rgba(230,199,118,.55);background:radial-gradient(ellipse at 50% 40%,rgba(217,141,146,.28),rgba(30,58,42,.72))}
+.sky svg.lines{position:absolute;inset:0;width:100%;height:100%}
+.sky line{stroke:var(--gold);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease}
+.sky line.on{stroke-dashoffset:0}
+.star{position:absolute;width:3.2rem;height:3.2rem;margin:-1.6rem 0 0 -1.6rem;border:0;background:none;padding:0;color:rgba(251,244,228,.8);cursor:pointer;animation:tw 3s ease-in-out infinite}
+.star:nth-of-type(2n){animation-delay:.8s}.star:nth-of-type(3n){animation-delay:1.5s}
+.star svg{width:1.9rem;height:1.9rem;display:block;margin:0 auto}
+.star.done{color:var(--gold);animation:none;filter:drop-shadow(0 0 7px rgba(230,199,118,.9))}
+@keyframes tw{50%{opacity:.45}}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.count{font-size:1rem;font-style:italic;opacity:.9;margin-bottom:1rem}
+.sheet{background:var(--paper);color:var(--ink);padding:1.8rem 1.7rem;box-shadow:0 10px 26px rgba(15,35,22,.4);outline:1px solid rgba(185,146,60,.7);outline-offset:-8px;text-align:left}
+.cert{min-height:10rem;display:flex;flex-direction:column;justify-content:center;gap:.5rem;text-align:center;font-size:1.35rem;line-height:1.4;border-top:5px solid var(--rose)}
+.cert small{font:italic 700 1.05rem var(--serif);color:var(--rosed)}
+.sheet .txt{margin:0;font-size:1.25rem;line-height:1.7;font-style:normal;text-wrap:pretty}
+#night::first-letter{float:left;font:italic 700 3.4rem/.85 var(--serif);color:var(--rosed);padding:.2rem .5rem 0 0}
+.row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:1.2rem}
+.btn{border:1px solid var(--gold);border-radius:999px;background:var(--rosed);color:var(--paper);font:700 1.05rem var(--serif);padding:.5rem 1.3rem;cursor:pointer}
+.btn.alt{background:transparent;color:var(--paper)}.btn.alt.on{background:var(--gold);color:var(--ink)}.btn:disabled{opacity:.6}
+.sheet .btn.alt{color:var(--rosed);border-color:var(--rose)}
+.coupon{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--paper);color:var(--ink);padding:1.1rem 1.6rem;margin-bottom:1rem;text-align:left;font-size:1.2rem;line-height:1.3;border-left:5px solid var(--rose)}
+.coupon::before,.coupon::after{content:"";position:absolute;top:50%;width:1.1rem;height:1.1rem;margin-top:-.55rem;border-radius:50%;background:var(--moss)}
+.coupon::before{left:-.55rem}.coupon::after{right:-.55rem}
+.coupon.used{opacity:.55;text-decoration:line-through}
+.add{display:flex;gap:.7rem;align-items:center;margin:1rem 0}
+input{flex:1;min-width:0;border:0;border-bottom:1px solid var(--rose);background:transparent;color:var(--ink);padding:.5rem .2rem;font:500 1.2rem var(--serif)}
+input::placeholder{color:rgba(47,42,36,.5);font-style:italic}
+ul{list-style:none;padding:0;margin:0}
+li{display:flex;justify-content:space-between;align-items:center;gap:.8rem;border-top:1px solid rgba(185,146,60,.4);padding:.7rem .1rem;font-size:1.2rem}
+li.empty{justify-content:center;font-style:italic;opacity:.65}
+.env{position:relative;width:min(20rem,100%);height:12.5rem;margin:1rem auto 0;cursor:pointer;border:0;background:none;padding:0}
+.env .body{position:absolute;inset:0;border-radius:4px;background:linear-gradient(160deg,var(--deep),var(--deep2));box-shadow:0 12px 28px rgba(10,28,18,.55);outline:1px solid rgba(230,199,118,.7);outline-offset:-7px}
+.env .flap{position:absolute;left:0;right:0;top:0;height:6.5rem;background:#1d3f31;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s}
+.env .seal{position:absolute;left:50%;top:4.3rem;margin-left:-1.7rem;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--rosed);border:2px solid var(--gold);display:grid;place-items:center;transition:opacity .4s}
+.env .seal svg{width:2.2rem;height:auto;display:block}
+.env.open .flap{transform:rotateX(180deg)}.env.open .seal{opacity:0}
+.letter{display:none;margin:1.8rem auto 0;border-top:5px solid var(--rose);white-space:pre-line;font-size:1.3rem;line-height:1.7;font-style:normal}
+.letter.show{display:block;animation:rise .9s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.heart{position:fixed;bottom:-2rem;pointer-events:none;animation:up 3.4s ease-out forwards;z-index:9}.heart svg{width:1.3rem;height:1.3rem;display:block}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.star{animation:none}.sky line,.env .flap{transition:none}.letter.show,.heart{animation-duration:.01s}}
+</style></head>
+<body>
+<section>
+<div class="lotus" id="lotus"></div>
+<h1 id="title"></h1>
+<p class="sub">Happy Boyfriend's Day to the most hardworking man I know.</p>
+<p class="fine">Touch each star. Some of this is serious. Most of it is fries.</p>
+<div class="days"><b id="dayNum"></b><span>days of us, since March 23, 2022</span></div>
+</section>
+<section>
+<h2>Our constellation</h2>
+<div class="sky" id="sky"><svg class="lines" id="lines" aria-hidden="true"></svg></div>
+<div class="count" id="count"></div>
+<div class="sheet cert" id="cert"></div>
+</section>
+<section><h2>A night I keep</h2><div class="sheet"><p class="txt" id="night"></p></div></section>
+<section><h2>Open when</h2><div class="row" id="when"></div><div class="sheet" id="whenNote" style="display:none"><p class="txt"></p></div></section>
+<section><h2>Two free roasts</h2><p class="fine">Touch to redeem. Screenshot it and send it to me.</p><div id="coupons"></div></section>
+<section><h2>Our song</h2><div class="sheet"><p class="fine" style="margin:0">We don't have one yet. Add a song you think fits us, then send it to me.</p>
+<div class="add"><input id="song" placeholder="Song and artist" aria-label="Song and artist"><button class="btn" id="add">Add</button></div><ul id="songs"></ul></div></section>
+<section><h2>One last thing</h2><p class="fine">Open the green one.</p>
+<button class="env" id="env" aria-label="Open the envelope"><div class="body"></div><div class="flap"></div><div class="seal" id="seal"></div></button>
+<div class="sheet letter" id="letter"></div></section>
+<script>
+/* ===== EDIT THESE ===== */
+var HIS_NAME="Borno", START=new Date(2022,2,23);
+var CERTS=[
+ "Legally required to share fries.\nOffender: Borno Das.",
+ "We are fat because we are in a healthy relationship. Medically unverified, emotionally accurate.",
+ "Snack tax: one bite of everything, payable to Daisy.",
+ "Official food cutter. Cuts my food for me every single time, then has the nerve to call me fat.",
+ "Daisy would like to file a complaint: you ate the last fry. Yes, Daisy is back. Deal with it.",
+ "Final ruling: still the one I'd share my fries with."
+];
+var NIGHT="We weren't together then, but we still loved each other, and that night proved it. You took me out clubbing, and afterwards a guy we had just randomly met was playing the guitar, with a bunch of other people around. We hugged, and we danced to just one song while the whole world disappeared. Then someone else drove the bike home. I sat squeezed in the middle and you sat behind me, holding me tight so I wouldn't fall. We were both very, very drunk, and I have never felt safer. I think about that night all the time.";
+var WHEN=[
+ ["Open when you miss me","Close your eyes and think of the bike ride home. I'm far, not gone. Call me. I'm probably thinking about fries anyway."],
+ ["Open when you're stressed","Breathe. You work harder than anyone I know and you've handled worse than this. Drink water, take five minutes, then go again. I'm proud of you."],
+ ["Open when you're hungry","Go eat. A proper meal. Send me a photo so I can be jealous. Fries count as a meal. Legally."]
+];
+var COUPONS=["Free roast no. 1. Taken without complaint.","Free roast no. 2. Use it wisely."];
+var SONGS=[];
+var LETTER="Borno,\n\nI'm not great at saying this out loud, so I'm writing it down.\n\nI'm proud of you. Really proud. I watch how hard you work, even when you're tired, even when nobody is clapping, and it makes me want to be better too.\n\nI can't wait to see who you become in a few years. I already know he's something special. You deserve every good thing that's coming, and I hope I get to watch it happen.\n\nThe distance is annoying, but it doesn't change any of this.\n\nAlso, you still owe me fries.\n\nLove,\nYour Daisy";
+/* ====================== */
+var $=function(i){return document.getElementById(i)};
+var STAR='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg>';
+var HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="CLR" d="M12 2C17.5 8 17.5 16 12 22C6.5 16 6.5 8 12 2z"/></svg>';
+function daisy(x,y,k){var g='<g transform="translate('+x+' '+y+') scale('+k+')">';for(var i=0;i<12;i++)g+='<ellipse cx="0" cy="-11" rx="3.4" ry="8" fill="#fbf4e4" stroke="#d9bd78" stroke-width=".6" transform="rotate('+i*30+')"/>';return g+'<circle r="5.2" fill="#e6c776" stroke="#b9923c" stroke-width=".8"/></g>'}
+function lily(x,y,k){var p='<path d="M0 0C-7-10-6-24 0-35C6-24 7-10 0 0Z" stroke="#e6c776" stroke-width=".9" stroke-linejoin="round" ',g='<g transform="translate('+x+' '+y+') scale('+k+')">';[60,180,300].forEach(function(a){g+=p+'fill="#c9777f" transform="rotate('+a+')"/>'});[0,120,240].forEach(function(a){g+=p+'fill="#e3a3a6" transform="rotate('+a+')"/>'});for(var i=0;i<5;i++){g+='<line x1="0" y1="0" x2="0" y2="-13" stroke="#e6c776" stroke-width=".8" transform="rotate('+(i*72+20)+')"/><circle cy="-14" r="1.6" fill="#b9923c" transform="rotate('+(i*72+20)+')"/>'}return g+'<circle r="2.4" fill="#e6c776"/></g>'}
+var LOTUS='<svg viewBox="0 0 220 120" aria-hidden="true">'+daisy(62,92,.6)+daisy(158,92,.6)+daisy(30,62,1.05)+daisy(190,62,1.05)+lily(110,60,1.25)+'</svg>';
+var SEALSVG='<svg viewBox="-21 -21 42 42" aria-hidden="true">'+daisy(0,0,1)+'</svg>';
+$("lotus").innerHTML=LOTUS;$("seal").innerHTML=SEALSVG;
+$("title").textContent="For "+HIS_NAME;
+$("dayNum").textContent=Math.floor((Date.now()-START)/864e5).toLocaleString();
+$("night").textContent=NIGHT;
+var POS=[[12,64],[28,28],[50,46],[70,20],[86,50],[64,78]],found=0,done=[],lines=[],NS="http://www.w3.org/2000/svg";
+for(var k=1;k<POS.length;k++){var ln=document.createElementNS(NS,"line");ln.setAttribute("x1",POS[k-1][0]+"%");ln.setAttribute("y1",POS[k-1][1]+"%");ln.setAttribute("x2",POS[k][0]+"%");ln.setAttribute("y2",POS[k][1]+"%");ln.setAttribute("pathLength","1");$("lines").appendChild(ln);lines.push(ln)}
+function cnt(){$("count").textContent=found+" of "+CERTS.length+" stars found"}cnt();
+$("cert").innerHTML="<small>Touch a star</small>";
+CERTS.forEach(function(c,i){var b=document.createElement("button");b.className="star";b.innerHTML=STAR;b.setAttribute("aria-label","Star "+(i+1));
+ b.style.left=POS[i][0]+"%";b.style.top=POS[i][1]+"%";
+ b.onclick=function(){$("cert").innerHTML="";var s=document.createElement("small");s.textContent="Official Bully Certificate no. "+(i+1);var p=document.createElement("div");p.style.whiteSpace="pre-line";p.textContent=c;$("cert").append(s,p);
+  if(!done[i]){done[i]=true;b.classList.add("done");found++;cnt();lines.forEach(function(l,j){if(done[j]&&done[j+1])l.classList.add("on")})}};
+ $("sky").appendChild(b)});
+WHEN.forEach(function(w){var b=document.createElement("button");b.className="btn alt";b.textContent=w[0];
+ b.onclick=function(){document.querySelectorAll("#when .btn").forEach(function(x){x.classList.remove("on")});b.classList.add("on");$("whenNote").style.display="block";$("whenNote").firstChild.textContent=w[1]};$("when").appendChild(b)});
+COUPONS.forEach(function(c){var d=document.createElement("div");d.className="coupon";var t=document.createElement("span");t.textContent=c;var b=document.createElement("button");b.className="btn";b.textContent="Redeem";
+ b.onclick=function(){d.classList.add("used");b.disabled=true;b.textContent="Redeemed"};d.append(t,b);$("coupons").appendChild(d)});
+var saved=[];try{saved=JSON.parse(localStorage.getItem("ourSongs")||"[]")}catch(e){}
+var list=SONGS.concat(saved);
+function send(s){var t="A song for our list: "+s;if(navigator.share){navigator.share({text:t}).catch(function(){})}else{window.open("https://wa.me/?text="+encodeURIComponent(t))}}
+function draw(){$("songs").innerHTML="";if(!list.length){var e=document.createElement("li");e.className="empty";e.textContent="Nothing here yet. Add the first one.";$("songs").appendChild(e)}list.forEach(function(s){var li=document.createElement("li");var t=document.createElement("span");t.textContent=s;var b=document.createElement("button");b.className="btn alt";b.textContent="Send to Debora";b.onclick=function(){send(s)};li.append(t,b);$("songs").appendChild(li)})}
+draw();
+$("add").onclick=function(){var v=$("song").value.trim();if(!v)return;list.push(v);saved.push(v);try{localStorage.setItem("ourSongs",JSON.stringify(saved))}catch(e){}$("song").value="";draw()};
+$("env").onclick=function(){this.classList.add("open");$("letter").textContent=LETTER;$("letter").classList.add("show");
+ for(var i=0;i<26;i++){(function(i){setTimeout(function(){var h=document.createElement("div");h.className="heart";h.innerHTML=HEART.replace("CLR",["#fbf4e4","#efc6c4","#e6c776","#d98d92"][i%4]);h.style.left=Math.random()*95+"vw";document.body.appendChild(h);setTimeout(function(){h.remove()},3500)},i*110)})(i)}};
+</script>
+</body></html>
